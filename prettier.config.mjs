@@ -1,4 +1,3 @@
-// .prettierrc.mjs
 /** @type {import("prettier").Config} */
 export default {
   plugins: ["prettier-plugin-astro", "prettier-plugin-tailwindcss"],
@@ -10,5 +9,4 @@ export default {
       },
     },
   ],
-  tailwindConfig: "./tailwind.config.mjs",
 };

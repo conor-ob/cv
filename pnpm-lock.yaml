@@ -27,6 +27,9 @@ importers:
       prettier:
         specifier: ^3.3.3
         version: 3.3.3
+      prettier-config-standard:
+        specifier: ^7.0.0
+        version: 7.0.0(prettier@3.3.3)
       prettier-plugin-astro:
         specifier: ^0.14.1
         version: 0.14.1
@@ -1566,6 +1569,11 @@ packages:
   preferred-pm@4.0.0:
     resolution: {integrity: sha512-gYBeFTZLu055D8Vv3cSPox/0iTPtkzxpLroSYYA7WXgRi31WCJ51Uyl8ZiPeUUjyvs2MBzK+S8v9JVUgHU/Sqw==}
     engines: {node: '>=18.12'}
+
+  prettier-config-standard@7.0.0:
+    resolution: {integrity: sha512-NgZy4TYupJR6aMMuV/Aqs0ONnVhlFT8PXVkYRskxREq8EUhJHOddVfBxPV6fWpgcASpJSgvvhVLk0CBO5M3Hvw==}
+    peerDependencies:
+      prettier: ^2.6.0 || ^3.0.0
 
   prettier-plugin-astro@0.14.1:
     resolution: {integrity: sha512-RiBETaaP9veVstE4vUwSIcdATj6dKmXljouXc/DDNwBSPTp8FRkLGDSGFClKsAFeeg+13SB0Z1JZvbD76bigJw==}
@@ -3941,6 +3949,10 @@ snapshots:
       find-up-simple: 1.0.0
       find-yarn-workspace-root2: 1.2.16
       which-pm: 3.0.0
+
+  prettier-config-standard@7.0.0(prettier@3.3.3):
+    dependencies:
+      prettier: 3.3.3
 
   prettier-plugin-astro@0.14.1:
     dependencies:
