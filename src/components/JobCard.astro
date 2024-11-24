@@ -1,0 +1,23 @@
+---
+interface Props {
+  title: string;
+  company: string;
+  logoUrl: string;
+  displayDate: string;
+}
+
+const { title, company, logoUrl, displayDate } = Astro.props;
+---
+
+<div
+  class="border-border flex flex-row items-center gap-4 rounded-2xl border p-4"
+>
+  <img class="size-24 rounded-2xl" src={logoUrl} />
+  <div>
+    <p class="text-xl">{title}</p>
+    <p class="text-lg">{company}</p>
+    <p class="text-base">
+      {displayDate}
+    </p>
+  </div>
+</div>

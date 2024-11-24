@@ -1,11 +1,16 @@
 ---
+import JobCard from "@components/JobCard.astro";
 
+import { experience } from "@data/sections/experience";
 ---
 
-<main class="flex flex-grow items-center justify-center">
-  <div class="flex rounded-xl border border-purple-500 p-6">
-    <p>
-      Hello from <span class="text-purple-500">Tailwind</span>!
-    </p>
+<main class="flex flex-grow px-4 lg:px-0">
+  <div class="w-full">
+    <div class="flex w-full flex-col justify-between gap-4 sm:flex-row">
+      <p class="text-2xl">Experience</p>
+      <div class="flex flex-col gap-4">
+        {experience.jobs.map((job) => <JobCard {...job} />)}
+      </div>
+    </div>
   </div>
 </main>
