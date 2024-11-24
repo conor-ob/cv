@@ -1,13 +1,12 @@
 ---
-import Layout from "@layouts/Layout.astro";
+import Main from "@layouts/Main.astro";
+import Footer from "@layouts/Footer.astro";
+import Header from "@layouts/Header.astro";
+import Html from "@layouts/Html.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-  <main class="mx-auto flex h-dvh max-w-2xl items-center justify-center">
-    <div class="mt-8 w-full rounded-xl border border-purple-500 p-6">
-      <p class="text-white">
-        Hello from <span class="text-purple-500">Tailwind</span>!
-      </p>
-    </div>
-  </main>
-</Layout>
+<Html title="Conor O'Brien - CV">
+  <Header />
+  <Main />
+  <Footer />
+</Html>
