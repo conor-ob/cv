@@ -7,5 +7,9 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   site: import.meta.env.VITE_SITE,
   output: "static",
-  integrations: [tailwind()],
+  integrations: [
+    tailwind({
+      applyBaseStyles: false,
+    }),
+  ],
 });

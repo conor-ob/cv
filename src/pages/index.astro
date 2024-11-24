@@ -1,8 +1,11 @@
 ---
+import "@styles/globals.css";
+
 import Main from "@layouts/Main.astro";
 import Footer from "@layouts/Footer.astro";
 import Header from "@layouts/Header.astro";
 import Html from "@layouts/Html.astro";
+import ThemeProvider from "@scripts/ThemeProvider.astro";
 ---
 
 <Html title="Conor O'Brien - CV">
@@ -10,3 +13,5 @@ import Html from "@layouts/Html.astro";
   <Main />
   <Footer />
 </Html>
+
+<ThemeProvider />
