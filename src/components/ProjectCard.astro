@@ -4,9 +4,10 @@ interface Props {
   type: string;
   logoUrl: string;
   url: string;
+  description: string;
 }
 
-const { title, type, logoUrl, url } = Astro.props;
+const { title, type, logoUrl, url, description } = Astro.props;
 ---
 
 <div class="border-border bg-primary-foreground rounded-2xl border p-4">
@@ -20,11 +21,7 @@ const { title, type, logoUrl, url } = Astro.props;
       </div>
     </div>
     <p class="text-muted-foreground text-sm">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis atque
-      quia omnis consectetur, voluptas praesentium veniam blanditiis ratione
-      asperiores accusantium laborum odit commodi quis deserunt incidunt et
-      dolor iure ut! Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-      Alias quia, doloribus ut beatae perspiciatis voluptatibus.
+      {description}
     </p>
   </div>
 </div>

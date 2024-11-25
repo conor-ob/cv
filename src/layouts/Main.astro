@@ -9,40 +9,43 @@ import { projects } from "@data/sections/projects";
 
 <main class="flex flex-grow flex-col gap-16 px-4 pb-16 pt-8 lg:px-0">
   <div class="w-full">
-    <div class="flex w-full flex-col justify-between gap-4 md:flex-row">
+    <div class="flex w-full flex-col justify-between gap-4 lg:flex-row">
       <p class="text-lg font-semibold">About</p>
-      <div class="flex w-full max-w-screen-sm flex-col gap-4">
-        <p class="text-muted-foreground text-sm">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
-          atque quia omnis consectetur, voluptas praesentium veniam blanditiis
-          ratione asperiores accusantium laborum odit commodi quis deserunt
-          incidunt et dolor iure ut! Lorem ipsum dolor sit, amet consectetur
-          adipisicing elit. Alias quia, doloribus ut beatae perspiciatis
-          voluptatibus.
+      <div class="flex w-full flex-col gap-4 lg:max-w-2xl">
+        <p class="text-muted-foreground text-balance text-sm">
+          I'm a software engineer with 10 years of experience across diverse
+          sectors and in various roles. I love writing code, delivering great
+          user experiences and I have a healthy obesession with design, always
+          letting designers know when a single pixel looks out of place. They're
+          thrilled when I do that... My journey started with an internship role
+          and evolved into a senior engineer and tech lead. While I excel at
+          leading technical projects and acting as a bridge between my
+          engineering team and senior product leadership, my true passion lies
+          in writing code and shipping features.
         </p>
       </div>
     </div>
   </div>
   <div class="w-full">
-    <div class="flex w-full flex-col justify-between gap-4 md:flex-row">
+    <div class="flex w-full flex-col justify-between gap-4 lg:flex-row">
       <p class="text-lg font-semibold">Experience</p>
-      <div class="flex w-full max-w-screen-sm flex-col gap-4">
+      <div class="flex w-full flex-col gap-4 lg:max-w-2xl">
         {experience.jobs.map((job) => <ExperienceCard {...job} />)}
       </div>
     </div>
   </div>
   <div class="w-full">
-    <div class="flex w-full flex-col justify-between gap-4 md:flex-row">
+    <div class="flex w-full flex-col justify-between gap-4 lg:flex-row">
       <p class="text-lg font-semibold">Education</p>
-      <div class="flex w-full max-w-screen-sm flex-col gap-4">
+      <div class="flex w-full flex-col gap-4 lg:max-w-2xl">
         {education.degrees.map((degree) => <EducationCard {...degree} />)}
       </div>
     </div>
   </div>
   <div class="w-full">
-    <div class="flex w-full flex-col justify-between gap-4 md:flex-row">
+    <div class="flex w-full flex-col justify-between gap-4 lg:flex-row">
       <p class="text-lg font-semibold">Projects</p>
-      <div class="flex w-full max-w-screen-sm flex-col gap-4">
+      <div class="flex w-full flex-col gap-4 lg:max-w-2xl">
         {projects.apps.map((app) => <ProjectCard {...app} />)}
       </div>
     </div>

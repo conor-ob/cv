@@ -4,9 +4,10 @@ interface Props {
   company: string;
   logoUrl: string;
   displayDate: string;
+  description: string;
 }
 
-const { title, company, logoUrl, displayDate } = Astro.props;
+const { title, company, logoUrl, displayDate, description } = Astro.props;
 ---
 
 <div class="border-border bg-primary-foreground rounded-2xl border p-4">
@@ -21,12 +22,6 @@ const { title, company, logoUrl, displayDate } = Astro.props;
         </p>
       </div>
     </div>
-    <p class="text-muted-foreground text-sm">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis atque
-      quia omnis consectetur, voluptas praesentium veniam blanditiis ratione
-      asperiores accusantium laborum odit commodi quis deserunt incidunt et
-      dolor iure ut! Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-      Alias quia, doloribus ut beatae perspiciatis voluptatibus.
-    </p>
+    <p class="text-muted-foreground text-balance text-sm">{description}</p>
   </div>
 </div>
