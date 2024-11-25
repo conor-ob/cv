@@ -11,8 +11,12 @@ import { config } from "@data/config";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{config.meta.title}</title>
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
   </head>
-  <body class="mx-auto flex min-h-dvh max-w-4xl flex-col">
+  <body
+    class="mx-auto flex min-h-dvh max-w-4xl flex-col font-sans tracking-tight"
+  >
     <slot />
   </body>
 </html>

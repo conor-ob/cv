@@ -9,15 +9,24 @@ interface Props {
 const { title, school, logoUrl, displayDate } = Astro.props;
 ---
 
-<div
-  class="border-border flex flex-row items-center gap-4 rounded-2xl border p-4"
->
-  <img class="size-20 touch-manipulation rounded-2xl" src={logoUrl} />
-  <div>
-    <p class="text-lg">{title}</p>
-    <p class="text-base">{school}</p>
-    <p class="text-sm">
-      {displayDate}
+<div class="border-border rounded-2xl border p-4">
+  <div class="flex flex-col gap-4">
+    <div class="flex flex-row items-center gap-4">
+      <img class="size-20 touch-manipulation rounded-xl" src={logoUrl} />
+      <div class="flex flex-col gap-0.5">
+        <p class="text-base font-semibold">{title}</p>
+        <p class="text-base">{school}</p>
+        <p class="text-muted-foreground text-sm">
+          {displayDate}
+        </p>
+      </div>
+    </div>
+    <p class="text-muted-foreground text-sm">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis atque
+      quia omnis consectetur, voluptas praesentium veniam blanditiis ratione
+      asperiores accusantium laborum odit commodi quis deserunt incidunt et
+      dolor iure ut! Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+      Alias quia, doloribus ut beatae perspiciatis voluptatibus.
     </p>
   </div>
 </div>
