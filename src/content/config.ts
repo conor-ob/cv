@@ -1,4 +1,3 @@
-import { projects } from "@data/sections/projects";
 import { z, defineCollection, reference } from "astro:content";
 
 export const collections = {
