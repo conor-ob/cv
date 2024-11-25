@@ -2,6 +2,20 @@
 title: Senior Software Engineer, Tech Lead
 company: toast
 displayDate: Dec 2018 - Present
+technologies:
+  [
+    "react",
+    "graphql",
+    "typescript",
+    "kotlin",
+    "java",
+    "postgres",
+    "aws",
+    "android",
+    "dynamodb",
+    "protobuf",
+    "storybook",
+  ]
 sort: 1
 ---
 

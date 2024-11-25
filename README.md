@@ -55,9 +55,10 @@ Feel free to check [our documentation](https://docs.astro.build) or jump into ou
 
 ## Inspiration
 
-- https://github.com/srleom/astro-theme-resume: https://astro-theme-resume.vercel.app/
-- https://github.com/KonradSzwarc/devscard: https://devscard.netlify.app/
-- https://github.com/henriqgoncalvs/website: https://www.henriqgoncalvs.com/
+- https://github.com/srleom/astro-theme-resume: https://astro-theme-resume.vercel.app
+- https://github.com/KonradSzwarc/devscard: https://devscard.netlify.app
+- https://github.com/henriqgoncalvs/website: https://www.henriqgoncalvs.com
+- https://github.com/coding-in-public/astro-content-collections-overview: https://youtu.be/Fcw4c3wzm7I?si=SIm2OMsDeCRtsy42
 
 ## TODO
 

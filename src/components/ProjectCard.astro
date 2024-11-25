@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import { type CollectionEntry, getEntry } from "astro:content";
+import { type CollectionEntry, getEntry, getEntries } from "astro:content";
 
 type Props = {
   project: CollectionEntry<"projects">;
@@ -8,6 +8,9 @@ type Props = {
 
 const { project } = Astro.props;
 const { data: app } = await getEntry("apps", project.data.app.id);
+const technologies = project.data.technologies
+  ? await getEntries(project.data.technologies)
+  : [];
 ---
 
 <div class="rounded-2xl border border-border bg-primary-foreground p-4">
@@ -29,5 +32,17 @@ const { data: app } = await getEntry("apps", project.data.app.id);
     <p class="text-sm text-muted-foreground">
       {project.body}
     </p>
+    <div class="flex flex-row flex-wrap gap-2">
+      {
+        technologies.map((technology) => (
+          <div class="flex flex-row items-center gap-1 rounded-md bg-secondary px-1.5 py-0.5 ring-1 ring-border">
+            <span class={`${technology.data.logo} size-4`} />
+            <p class="text-xs font-normal text-muted-foreground">
+              {technology.data.name}
+            </p>
+          </div>
+        ))
+      }
+    </div>
   </div>
 </div>

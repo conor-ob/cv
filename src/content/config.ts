@@ -41,6 +41,7 @@ export const collections = {
       title: z.string().min(1),
       company: reference("companies"),
       displayDate: z.string().min(1),
+      technologies: z.array(reference("technologies")).optional(),
       sort: z.number(),
     }),
   }),
@@ -48,6 +49,7 @@ export const collections = {
     type: "content",
     schema: z.object({
       app: reference("apps"),
+      technologies: z.array(reference("technologies")).optional(),
       sort: z.number(),
     }),
   }),
@@ -58,5 +60,26 @@ export const collections = {
         name: z.string().min(1),
         logo: image(),
       }),
+  }),
+  technologies: defineCollection({
+    type: "data",
+    schema: z.object({
+      name: z.enum([
+        "Android",
+        "AWS",
+        "DynamoDB",
+        "GraphQL",
+        "Java",
+        "Kotlin",
+        "PostgreSQL",
+        "Protobuf",
+        "React",
+        "Storybook",
+        "tRPC",
+        "TypeScript",
+      ]),
+      logo: z.string().min(1),
+      url: z.string().url(),
+    }),
   }),
 };

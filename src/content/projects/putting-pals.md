@@ -1,5 +1,6 @@
 ---
 app: putting-pals
+technologies: ["trpc"]
 sort: 1
 ---
 
