@@ -1,0 +1,23 @@
+---
+interface Props {
+  title: string;
+  school: string;
+  logoUrl: string;
+  displayDate: string;
+}
+
+const { title, school, logoUrl, displayDate } = Astro.props;
+---
+
+<div
+  class="border-border flex flex-row items-center gap-4 rounded-2xl border p-4"
+>
+  <img class="size-20 touch-manipulation rounded-2xl" src={logoUrl} />
+  <div>
+    <p class="text-lg">{title}</p>
+    <p class="text-base">{school}</p>
+    <p class="text-sm">
+      {displayDate}
+    </p>
+  </div>
+</div>

@@ -1,12 +1,13 @@
 export const config = {
   meta: {
-    title: "Conor O'Brien",
+    title: "CV • Conor O'Brien",
     description: "Conor O'Brien's CV",
   },
   header: {
     title: "cv",
   },
   footer: {
+    title: `${new Date().getFullYear()} Conor O'Brien | Built with Astro 🚀`,
     links: [
       {
         name: "LinkedIn",
