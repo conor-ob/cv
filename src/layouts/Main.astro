@@ -6,22 +6,20 @@ import ExperienceCard from "@components/ExperienceCard.astro";
 import ProjectCard from "@components/ProjectCard.astro";
 import Section from "@components/Section.astro";
 
+const aboutCollection = await getCollection("about");
 const experienceCollection = await getCollection("experience");
 const educationCollection = await getCollection("education");
 const projectsCollection = await getCollection("projects");
 ---
 
 <main class="flex flex-grow flex-col gap-16 px-4 pb-16 pt-8 lg:px-0">
-  <Section title="About">
-    <p class="text-balance text-sm text-muted-foreground">
-      I'm a software engineer with 10 years of experience across diverse sectors
-      and roles. My career has evolved into a senior tech lead role where the
-      projects I'm responsible for delivering are shaping the direction of the
-      organisation. While I excel at leading technical projects and acting as a
-      bridge between my engineering team and senior leadership—my true passion
-      lies in writing code, obsessing over design details and shipping features.
-    </p>
-  </Section>
+  {
+    aboutCollection.map((about) => (
+      <Section title={about.data.title}>
+        <p class="text-balance text-sm text-muted-foreground">{about.body}</p>
+      </Section>
+    ))
+  }
 
   <Section title="Experience">
     {
