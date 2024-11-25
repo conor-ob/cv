@@ -41,7 +41,7 @@ export const collections = {
       title: z.string().min(1),
       company: reference("companies"),
       displayDate: z.string().min(1),
-      technologies: z.array(reference("technologies")).optional(),
+      technologies: z.array(reference("technologies")),
       sort: z.number(),
     }),
   }),
@@ -49,7 +49,7 @@ export const collections = {
     type: "content",
     schema: z.object({
       app: reference("apps"),
-      technologies: z.array(reference("technologies")).optional(),
+      technologies: z.array(reference("technologies")),
       sort: z.number(),
     }),
   }),
@@ -60,6 +60,13 @@ export const collections = {
         name: z.string().min(1),
         logo: image(),
       }),
+  }),
+  skills: defineCollection({
+    type: "content",
+    schema: z.object({
+      technologies: z.array(reference("technologies")),
+      sort: z.number(),
+    }),
   }),
   technologies: defineCollection({
     type: "data",
@@ -80,6 +87,7 @@ export const collections = {
         "PostgreSQL",
         "Protobuf",
         "React",
+        "React Native",
         "Storybook",
         "Tailwind",
         "tRPC",
