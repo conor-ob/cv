@@ -1,9 +1,9 @@
 ---
-import { config } from "@data/config";
+const currentYear = new Date().getFullYear();
 ---
 
-<footer class="border-border border-t p-6 lg:px-0">
-  <p class="text-muted-foreground text-center text-sm">
-    &copy; {config.footer.title}
+<footer class="border-t border-border px-6 pb-8 pt-6 lg:px-0">
+  <p class="text-center text-sm text-muted-foreground">
+    &copy; {currentYear} Conor O'Brien | Built with Astro 🚀
   </p>
 </footer>

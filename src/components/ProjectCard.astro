@@ -1,27 +1,33 @@
 ---
-interface Props {
-  title: string;
-  type: string;
-  logoUrl: string;
-  url: string;
-  description: string;
-}
+import { Image } from "astro:assets";
+import { type CollectionEntry, getEntry } from "astro:content";
 
-const { title, type, logoUrl, url, description } = Astro.props;
+type Props = {
+  project: CollectionEntry<"projects">;
+};
+
+const { project } = Astro.props;
+const { data: app } = await getEntry("apps", project.data.app.id);
 ---
 
-<div class="border-border bg-primary-foreground rounded-2xl border p-4">
+<div class="rounded-2xl border border-border bg-primary-foreground p-4">
   <div class="flex flex-col gap-4">
     <div class="flex flex-row items-center gap-4">
-      <img class="size-20 touch-manipulation rounded-xl" src={logoUrl} />
+      <Image
+        class="size-20 touch-manipulation rounded-xl"
+        src={app.logo}
+        alt={app.name}
+      />
       <div class="flex flex-col gap-0.5">
-        <p class="font-semibold">{title}</p>
-        <a class="text-blue-500" href={url}>{url.substring(8)}</a>
-        <p class="text-muted-foreground text-sm">{type}</p>
+        <p class="font-semibold">{app.name}</p>
+        <a class="text-blue-500" href={app.githubUrl}
+          >{app.githubUrl.substring(8)}</a
+        >
+        <p class="text-sm text-muted-foreground">{app.type}</p>
       </div>
     </div>
-    <p class="text-muted-foreground text-sm">
-      {description}
+    <p class="text-sm text-muted-foreground">
+      {project.body}
     </p>
   </div>
 </div>

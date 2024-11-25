@@ -1,0 +1,5 @@
+name: "Putting Pals"
+logo: "./putting-pals.png"
+type: "React app"
+deploymentUrl: "https://puttingpals.conorob.me"
+githubUrl: "https://github.com/conor-ob/putting-pals"

@@ -58,4 +58,7 @@ Feel free to check [our documentation](https://docs.astro.build) or jump into ou
 - https://github.com/srleom/astro-theme-resume: https://astro-theme-resume.vercel.app/
 - https://github.com/KonradSzwarc/devscard: https://devscard.netlify.app/
 - https://github.com/henriqgoncalvs/website: https://www.henriqgoncalvs.com/
--
+
+## TODO
+
+- [ ] fix error when processing images with sharp image service

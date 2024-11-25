@@ -1,52 +1,47 @@
 ---
+import { getCollection } from "astro:content";
+
 import EducationCard from "@components/EducationCard.astro";
 import ExperienceCard from "@components/ExperienceCard.astro";
 import ProjectCard from "@components/ProjectCard.astro";
-import { experience } from "@data/sections/experience";
-import { education } from "@data/sections/education";
-import { projects } from "@data/sections/projects";
+import Section from "@components/Section.astro";
+
+const aboutCollection = await getCollection("about");
+const experienceCollection = await getCollection("experience");
+const educationCollection = await getCollection("education");
+const projectsCollection = await getCollection("projects");
 ---
 
 <main class="flex flex-grow flex-col gap-16 px-4 pb-16 pt-8 lg:px-0">
-  <div class="w-full">
-    <div class="flex w-full flex-col justify-between gap-4 lg:flex-row">
-      <p class="text-lg font-semibold">About</p>
-      <div class="flex w-full flex-col gap-4 lg:max-w-2xl">
-        <p class="text-muted-foreground text-balance text-sm">
-          I'm a software engineer with 10 years of experience across diverse
-          sectors and roles. My career has evolved into a senior tech lead role
-          where the decisions I make have influence outside of my team and the
-          projects I'm responsible for delivering start to shape the direction
-          of the organisation. While I excel at leading technical projects and
-          acting as a bridge between my engineering team and senior
-          leadership—my true passion lies in writing code, obsessing over design
-          details and shipping features.
-        </p>
-      </div>
-    </div>
-  </div>
-  <div class="w-full">
-    <div class="flex w-full flex-col justify-between gap-4 lg:flex-row">
-      <p class="text-lg font-semibold">Experience</p>
-      <div class="flex w-full flex-col gap-4 lg:max-w-2xl">
-        {experience.jobs.map((job) => <ExperienceCard {...job} />)}
-      </div>
-    </div>
-  </div>
-  <div class="w-full">
-    <div class="flex w-full flex-col justify-between gap-4 lg:flex-row">
-      <p class="text-lg font-semibold">Education</p>
-      <div class="flex w-full flex-col gap-4 lg:max-w-2xl">
-        {education.degrees.map((degree) => <EducationCard {...degree} />)}
-      </div>
-    </div>
-  </div>
-  <div class="w-full">
-    <div class="flex w-full flex-col justify-between gap-4 lg:flex-row">
-      <p class="text-lg font-semibold">Projects</p>
-      <div class="flex w-full flex-col gap-4 lg:max-w-2xl">
-        {projects.apps.map((app) => <ProjectCard {...app} />)}
-      </div>
-    </div>
-  </div>
+  {
+    aboutCollection.map((about) => (
+      <Section title={about.data.title}>
+        <p class="text-balance text-sm text-muted-foreground">{about.body}</p>
+      </Section>
+    ))
+  }
+
+  <Section title="Experience">
+    {
+      experienceCollection
+        .sort((a, b) => a.data.sort - b.data.sort)
+        .map((experience) => <ExperienceCard experience={experience} />)
+    }
+  </Section>
+
+  <Section title="Education">
+    {
+      educationCollection
+        .sort((a, b) => a.data.sort - b.data.sort)
+        .map((education) => <EducationCard education={education} />)
+    }
+  </Section>
+
+  <Section title="Projects">
+    {
+      projectsCollection
+        .sort((a, b) => a.data.sort - b.data.sort)
+        .map((project) => <ProjectCard project={project} />)
+    }
+  </Section>
 </main>
