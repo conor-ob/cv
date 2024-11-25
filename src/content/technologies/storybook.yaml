@@ -1,3 +1,4 @@
 name: "Storybook"
-logo: "icon-[logos--storybook-icon]"
+logoLight: "icon-[logos--storybook-icon]"
+logoDark: "dark:icon-[logos--storybook-icon]"
 url: "https://storybook.js.org"

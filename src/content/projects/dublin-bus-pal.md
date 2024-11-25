@@ -1,5 +1,6 @@
 ---
 app: dublin-bus-pal
+technologies: ["android", "kotlin"]
 sort: 4
 ---
 

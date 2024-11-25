@@ -7,6 +7,7 @@ technologies:
     "react",
     "graphql",
     "typescript",
+    "tailwind",
     "kotlin",
     "java",
     "postgres",

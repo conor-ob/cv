@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import { type CollectionEntry, getEntry, getEntries } from "astro:content";
+import TechnologyBadge from "./TechnologyBadge.astro";
 
 type Props = {
   experience: CollectionEntry<"experience">;
@@ -33,17 +34,14 @@ const technologies = experience.data.technologies
       </div>
     </div>
     <p class="text-balance text-sm text-muted-foreground">{experience.body}</p>
-    <div class="flex flex-row flex-wrap gap-2">
-      {
-        technologies.map((technology) => (
-          <div class="flex flex-row items-center gap-1 rounded-md bg-secondary px-1.5 py-0.5 ring-1 ring-border">
-            <span class={`${technology.data.logo} size-4`} />
-            <p class="text-xs font-normal text-muted-foreground">
-              {technology.data.name}
-            </p>
-          </div>
-        ))
-      }
-    </div>
+    {
+      technologies.length > 0 && (
+        <div class="flex flex-row flex-wrap gap-2">
+          {technologies.map((technology) => (
+            <TechnologyBadge technology={technology} />
+          ))}
+        </div>
+      )
+    }
   </div>
 </div>

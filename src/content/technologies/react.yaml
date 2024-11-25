@@ -1,3 +1,4 @@
 name: "React"
-logo: "icon-[logos--react]"
+logoLight: "icon-[logos--react]"
+logoDark: "dark:icon-[logos--react]"
 url: "https://react.dev/"

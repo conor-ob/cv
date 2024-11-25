@@ -1,3 +1,4 @@
 name: "Kotlin"
-logo: "icon-[logos--kotlin-icon]"
+logoLight: "icon-[devicon--kotlin]"
+logoDark: "dark:icon-[devicon--kotlin]"
 url: "https://kotlinlang.org"

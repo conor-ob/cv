@@ -1,3 +1,4 @@
 name: "DynamoDB"
-logo: "icon-[skill-icons--dynamodb-dark]"
+logoLight: "icon-[skill-icons--dynamodb-light]"
+logoDark: "dark:icon-[skill-icons--dynamodb-dark]"
 url: "https://aws.amazon.com/dynamodb"

@@ -1,3 +1,4 @@
 name: "tRPC"
-logo: "icon-[devicon--trpc]"
+logoLight: "icon-[devicon--trpc]"
+logoDark: "dark:icon-[devicon--trpc]"
 url: "https://trpc.io"

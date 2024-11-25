@@ -1,5 +1,6 @@
 ---
 app: inter-club-league
+technologies: ["typescript", "react", "graphql"]
 sort: 2
 ---
 

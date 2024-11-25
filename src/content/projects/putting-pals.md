@@ -1,6 +1,6 @@
 ---
 app: putting-pals
-technologies: ["trpc"]
+technologies: ["trpc", "astro"]
 sort: 1
 ---
 

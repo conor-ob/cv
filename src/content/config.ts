@@ -66,6 +66,7 @@ export const collections = {
     schema: z.object({
       name: z.enum([
         "Android",
+        "Astro",
         "AWS",
         "DynamoDB",
         "GraphQL",
@@ -75,10 +76,12 @@ export const collections = {
         "Protobuf",
         "React",
         "Storybook",
+        "Tailwind",
         "tRPC",
         "TypeScript",
       ]),
-      logo: z.string().min(1),
+      logoLight: z.string().min(1),
+      logoDark: z.string().min(1),
       url: z.string().url(),
     }),
   }),

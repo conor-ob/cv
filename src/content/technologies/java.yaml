@@ -1,3 +1,4 @@
 name: "Java"
-logo: "icon-[logos--java]"
+logoLight: "icon-[logos--java]"
+logoDark: "dark:icon-[logos--java]"
 url: "https://www.java.com"

@@ -1,3 +1,4 @@
 name: "AWS"
-logo: "icon-[logos--aws]"
+logoLight: "icon-[logos--aws]"
+logoDark: "dark:icon-[skill-icons--aws-dark]"
 url: "https://aws.amazon.com"
