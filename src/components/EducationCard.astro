@@ -1,29 +1,33 @@
 ---
-interface Props {
-  title: string;
-  school: string;
-  logoUrl: string;
-  displayDate: string;
-  description: string;
-}
+import { Image } from "astro:assets";
+import { type CollectionEntry, getEntry } from "astro:content";
 
-const { title, school, logoUrl, displayDate, description } = Astro.props;
+type Props = {
+  education: CollectionEntry<"education">;
+};
+
+const { education } = Astro.props;
+const { data: school } = await getEntry("schools", education.data.school.id);
 ---
 
-<div class="border-border bg-primary-foreground rounded-2xl border p-4">
+<div class="rounded-2xl border border-border bg-primary-foreground p-4">
   <div class="flex flex-col gap-4">
     <div class="flex flex-row items-center gap-4">
-      <img class="size-20 touch-manipulation rounded-xl" src={logoUrl} />
+      <Image
+        class="size-20 touch-manipulation rounded-xl"
+        src={school.logo}
+        alt={school.name}
+      />
       <div class="flex flex-col gap-0.5">
-        <p class="text-base font-semibold">{title}</p>
-        <p class="text-base">{school}</p>
-        <p class="text-muted-foreground text-sm">
-          {displayDate}
+        <p class="text-base font-semibold">{education.data.degree}</p>
+        <p class="text-base">{school.name}</p>
+        <p class="text-sm text-muted-foreground">
+          {education.data.displayDate}
         </p>
       </div>
     </div>
-    <p class="text-muted-foreground text-balance text-sm">
-      {description}
+    <p class="text-balance text-sm text-muted-foreground">
+      {education.body}
     </p>
   </div>
 </div>
