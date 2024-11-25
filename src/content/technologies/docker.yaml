@@ -1,0 +1,4 @@
+name: "Docker"
+logoLight: "icon-[logos--docker-icon]"
+logoDark: "dark:icon-[logos--docker-icon]"
+url: "https://www.docker.com"

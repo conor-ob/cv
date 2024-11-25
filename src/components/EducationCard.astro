@@ -20,7 +20,7 @@ const { data: school } = await getEntry("schools", education.data.school.id);
       />
       <div class="flex flex-col gap-0.5">
         <p class="text-base font-semibold">{education.data.degree}</p>
-        <p class="text-base">{school.name}</p>
+        <p class="text-base text-primary/90">{school.name}</p>
         <p class="text-sm text-muted-foreground">
           {education.data.displayDate}
         </p>

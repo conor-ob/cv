@@ -1,0 +1,4 @@
+name: "TypeScript"
+logoLight: "icon-[vscode-icons--file-type-typescript-official]"
+logoDark: "dark:icon-[vscode-icons--file-type-typescript-official]"
+url: "https://www.typescriptlang.org"

@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
-import { type CollectionEntry, getEntry } from "astro:content";
+import { type CollectionEntry, getEntry, getEntries } from "astro:content";
+import TechnologyBadge from "./TechnologyBadge.astro";
 
 type Props = {
   project: CollectionEntry<"projects">;
@@ -8,6 +9,9 @@ type Props = {
 
 const { project } = Astro.props;
 const { data: app } = await getEntry("apps", project.data.app.id);
+const technologies = project.data.technologies
+  ? await getEntries(project.data.technologies)
+  : [];
 ---
 
 <div class="rounded-2xl border border-border bg-primary-foreground p-4">
@@ -29,5 +33,14 @@ const { data: app } = await getEntry("apps", project.data.app.id);
     <p class="text-sm text-muted-foreground">
       {project.body}
     </p>
+    {
+      technologies.length > 0 && (
+        <div class="flex flex-row flex-wrap gap-2">
+          {technologies.map((technology) => (
+            <TechnologyBadge technology={technology} />
+          ))}
+        </div>
+      )
+    }
   </div>
 </div>

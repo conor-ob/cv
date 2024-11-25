@@ -1,5 +1,6 @@
 ---
 app: dublink
+technologies: ["android", "kotlin"]
 sort: 3
 ---
 
