@@ -1,0 +1,27 @@
+---
+interface Props {
+  title: string;
+  type: string;
+  logoUrl: string;
+  url: string;
+  description: string;
+}
+
+const { title, type, logoUrl, url, description } = Astro.props;
+---
+
+<div class="border-border bg-primary-foreground rounded-2xl border p-4">
+  <div class="flex flex-col gap-4">
+    <div class="flex flex-row items-center gap-4">
+      <img class="size-20 touch-manipulation rounded-xl" src={logoUrl} />
+      <div class="flex flex-col gap-0.5">
+        <p class="font-semibold">{title}</p>
+        <a class="text-blue-500" href={url}>{url.substring(8)}</a>
+        <p class="text-muted-foreground text-sm">{type}</p>
+      </div>
+    </div>
+    <p class="text-muted-foreground text-sm">
+      {description}
+    </p>
+  </div>
+</div>
