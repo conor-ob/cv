@@ -1,0 +1,4 @@
+name: "Kubernetes"
+logoLight: "icon-[devicon--kubernetes]"
+logoDark: "dark:icon-[devicon--kubernetes]"
+url: "https://kubernetes.io"

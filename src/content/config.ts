@@ -66,12 +66,17 @@ export const collections = {
     schema: z.object({
       name: z.enum([
         "Android",
+        "Angular",
         "Astro",
         "AWS",
+        "Docker",
         "DynamoDB",
         "GraphQL",
         "Java",
+        "Kafka",
         "Kotlin",
+        "Kubernetes",
+        "OracleDB",
         "PostgreSQL",
         "Protobuf",
         "React",
