@@ -1,0 +1,5 @@
+name: "Inter Club League"
+logo: "./inter-club-league.png"
+type: "React app"
+deploymentUrl: "https://clubleague.conorob.me"
+githubUrl: "https://github.com/conor-ob/inter-club-league"
