@@ -1,14 +1,30 @@
 ---
+import EducationCard from "@components/EducationCard.astro";
 import ExperienceCard from "@components/ExperienceCard.astro";
-
+import ProjectCard from "@components/ProjectCard.astro";
 import { experience } from "@data/sections/experience";
 import { education } from "@data/sections/education";
-import EducationCard from "@components/EducationCard.astro";
+import { projects } from "@data/sections/projects";
 ---
 
-<main class="flex flex-grow flex-col gap-8 px-4 py-16 lg:px-0">
+<main class="flex flex-grow flex-col gap-16 px-4 pb-16 pt-8 lg:px-0">
   <div class="w-full">
-    <div class="flex w-full flex-col justify-between gap-4 sm:flex-row">
+    <div class="flex w-full flex-col justify-between gap-4 md:flex-row">
+      <p class="text-lg font-semibold">About</p>
+      <div class="flex w-full max-w-screen-sm flex-col gap-4">
+        <p class="text-muted-foreground text-sm">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
+          atque quia omnis consectetur, voluptas praesentium veniam blanditiis
+          ratione asperiores accusantium laborum odit commodi quis deserunt
+          incidunt et dolor iure ut! Lorem ipsum dolor sit, amet consectetur
+          adipisicing elit. Alias quia, doloribus ut beatae perspiciatis
+          voluptatibus.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="w-full">
+    <div class="flex w-full flex-col justify-between gap-4 md:flex-row">
       <p class="text-lg font-semibold">Experience</p>
       <div class="flex w-full max-w-screen-sm flex-col gap-4">
         {experience.jobs.map((job) => <ExperienceCard {...job} />)}
@@ -16,10 +32,18 @@ import EducationCard from "@components/EducationCard.astro";
     </div>
   </div>
   <div class="w-full">
-    <div class="flex w-full flex-col justify-between gap-4 sm:flex-row">
+    <div class="flex w-full flex-col justify-between gap-4 md:flex-row">
       <p class="text-lg font-semibold">Education</p>
       <div class="flex w-full max-w-screen-sm flex-col gap-4">
         {education.degrees.map((degree) => <EducationCard {...degree} />)}
+      </div>
+    </div>
+  </div>
+  <div class="w-full">
+    <div class="flex w-full flex-col justify-between gap-4 md:flex-row">
+      <p class="text-lg font-semibold">Projects</p>
+      <div class="flex w-full max-w-screen-sm flex-col gap-4">
+        {projects.apps.map((app) => <ProjectCard {...app} />)}
       </div>
     </div>
   </div>
