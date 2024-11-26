@@ -5,4 +5,4 @@ displayDate: 2014 - 2015
 sort: 1
 ---
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis atque quia omnis consectetur, voluptas praesentium veniam blanditiis ratione asperiores accusantium laborum odit commodi quis deserunt incidunt et dolor iure ut! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias quia, doloribus ut beatae perspiciatis voluptatibus.
+Graduated with a First Class Honours 4.12 GPA and won the Salesforce Prize for Best Graduating Student in DT265.

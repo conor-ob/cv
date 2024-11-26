@@ -4,7 +4,4 @@ technologies: ["typescript", "react", "tailwind", "graphql"]
 sort: 2
 ---
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis atque quia
-omnis consectetur, voluptas praesentium veniam blanditiis ratione asperiores accusantium
-laborum odit commodi quis deserunt incidunt et dolor iure ut! Lorem ipsum dolor sit, amet
-consectetur adipisicing elit. Alias quia, doloribus ut beatae perspiciatis voluptatibus.
+My cycling club runs a friendly racing league with several other clubs each year. Weekly info would be posted across multiple platforms and people often had trouble finding the relevant info for each race. I built this to consolidate all the schedule info, race locations and results info in a single place.

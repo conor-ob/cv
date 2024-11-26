@@ -6,4 +6,4 @@ technologies: ["java", "angular", "oracle", "docker", "kafka", "kubernetes"]
 sort: 2
 ---
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis atque quia omnis consectetur, voluptas praesentium veniam blanditiis ratione asperiores accusantium laborum odit commodi quis deserunt incidunt et dolor iure ut! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias quia, doloribus ut beatae perspiciatis voluptatibus.
+I worked on the MX.3 platform used by financial institutions all over the world for trading and risk management. Due to the nature of this industry I became experienced using test-driven development to produce software that was performant, secure and scalable.

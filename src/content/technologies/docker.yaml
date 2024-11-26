@@ -1,4 +1,4 @@
 name: "Docker"
-logoLight: "icon-[logos--docker-icon]"
-logoDark: "dark:icon-[logos--docker-icon]"
+logoLight: "icon-[vscode-icons--file-type-docker2]"
+logoDark: "dark:icon-[vscode-icons--file-type-docker2]"
 url: "https://www.docker.com"

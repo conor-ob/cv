@@ -1,9 +1,19 @@
 ---
 import ThemeToggle from "@scripts/ThemeToggle.astro";
+import { Image } from "astro:assets";
+
+import avatar from "./avatar.jpg";
 ---
 
 <header class="flex flex-row items-center justify-between px-4 py-8 lg:px-0">
-  <p class="text-base font-medium">Conor O'Brien</p>
+  <div class="flex flex-row items-center gap-2">
+    <Image
+      class="size-8 rounded-full ring-1 ring-secondary"
+      src={avatar}
+      alt="Conor O'Brien"
+    />
+    <p class="text-base font-semibold">Conor O'Brien</p>
+  </div>
   <button
     id="toggleDarkMode"
     class="relative touch-manipulation rounded-md border border-border p-1.5 transition-all hover:bg-border"
