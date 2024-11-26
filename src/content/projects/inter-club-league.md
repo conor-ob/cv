@@ -1,6 +1,6 @@
 ---
 app: inter-club-league
-technologies: ["typescript", "react", "tailwind", "graphql"]
+technologies: ["typescript", "react", "graphql", "tailwind"]
 sort: 2
 ---
 

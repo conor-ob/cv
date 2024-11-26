@@ -2,7 +2,7 @@
 title: Software Engineer
 company: murex
 displayDate: Jun 2015 - Nov 2018
-technologies: ["java", "angular", "oracle", "docker", "kafka", "kubernetes"]
+technologies: ["java", "angular", "oracle", "kafka", "kubernetes", "docker"]
 sort: 2
 ---
 
