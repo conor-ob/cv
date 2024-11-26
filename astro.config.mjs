@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig, squooshImageService } from "astro/config";
+import { defineConfig } from "astro/config";
 
 import tailwind from "@astrojs/tailwind";
 
@@ -12,9 +12,6 @@ export default defineConfig({
       applyBaseStyles: false,
     }),
   ],
-  image: {
-    service: squooshImageService(),
-  },
   devToolbar: {
     enabled: false,
   },
