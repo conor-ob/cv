@@ -2,6 +2,8 @@
 import { Image } from "astro:assets";
 import { type CollectionEntry, getEntry, getEntries } from "astro:content";
 import TechnologyBadge from "./TechnologyBadge.astro";
+import GitHubBadge from "./GitHubBadge.astro";
+import ExternalLinkIcon from "./ExternalLinkIcon.astro";
 
 type Props = {
   project: CollectionEntry<"projects">;
@@ -22,12 +24,15 @@ const technologies = project.data.technologies
         src={app.logo}
         alt={app.name}
       />
-      <div class="flex flex-col gap-0.5">
-        <p class="font-semibold">{app.name}</p>
-        <a class="text-blue-500" href={app.githubUrl}
-          >{app.githubUrl.substring(8)}</a
-        >
-        <p class="text-sm text-muted-foreground">{app.type}</p>
+      <div class="flex flex-col">
+        <div class="flex flex-row gap-1.5">
+          <p class="font-semibold">{app.name}</p>
+          <div class="mt-[1px]">
+            <ExternalLinkIcon url={app.deploymentUrl ?? app.githubUrl} />
+          </div>
+        </div>
+        <div class="w-fit"><GitHubBadge url={app.githubUrl} /></div>
+        <p class="mt-1.5 text-sm text-muted-foreground">{app.type}</p>
       </div>
     </div>
     <p class="text-sm text-muted-foreground">
