@@ -1,12 +1,6 @@
 import { z, defineCollection, reference } from "astro:content";
 
 export const collections = {
-  about: defineCollection({
-    type: "content",
-    schema: z.object({
-      title: z.string().min(1),
-    }),
-  }),
   apps: defineCollection({
     type: "data",
     schema: ({ image }) =>
@@ -45,6 +39,12 @@ export const collections = {
       sort: z.number(),
     }),
   }),
+  info: defineCollection({
+    type: "content",
+    schema: z.object({
+      title: z.string().min(1),
+    }),
+  }),
   projects: defineCollection({
     type: "content",
     schema: z.object({
@@ -71,30 +71,8 @@ export const collections = {
   technologies: defineCollection({
     type: "data",
     schema: z.object({
-      name: z.enum([
-        "Android",
-        "Angular",
-        "Astro",
-        "AWS",
-        "Docker",
-        "DynamoDB",
-        "GraphQL",
-        "Java",
-        "Kafka",
-        "Kotlin",
-        "Kubernetes",
-        "OracleDB",
-        "PostgreSQL",
-        "Protobuf",
-        "React",
-        "React Native",
-        "Storybook",
-        "Tailwind",
-        "tRPC",
-        "TypeScript",
-      ]),
-      logoLight: z.string().min(1),
-      logoDark: z.string().min(1),
+      name: z.string().min(1),
+      icon: z.string().min(1),
       url: z.string().url(),
     }),
   }),

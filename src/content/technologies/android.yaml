@@ -1,4 +1,3 @@
 name: "Android"
-logoLight: "icon-[devicon--android]"
-logoDark: "dark:icon-[devicon--android]"
+icon: "icon-[devicon--android]"
 url: "https://www.android.com"

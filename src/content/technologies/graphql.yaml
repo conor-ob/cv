@@ -1,4 +1,3 @@
 name: "GraphQL"
-logoLight: "icon-[logos--graphql]"
-logoDark: "dark:icon-[logos--graphql]"
+icon: "icon-[logos--graphql]"
 url: "https://graphql.org"
