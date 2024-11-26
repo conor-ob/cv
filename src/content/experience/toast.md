@@ -20,4 +20,4 @@ technologies:
 sort: 1
 ---
 
-I mainly build software critical to end-of-day workflows for over 120,000 restaurants. More recenly I've led the development of new smart service features with the aim of increasing average order volume. Previously I worked on digital ordering products to help restaurants manage the seismic shift to online ordering during the COVID-19 pandemic.
+I build software critical to end-of-day workflows for over 120,000 restaurants. More recenly I've led the development of new smart service features with the aim of increasing average order volume. Previously I worked on digital ordering products to help restaurants manage the seismic shift to online ordering during the COVID-19 pandemic.

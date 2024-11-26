@@ -1,0 +1,4 @@
+name: "Next.js"
+logoLight: "icon-[devicon--nextjs]"
+logoDark: "dark:icon-[devicon--nextjs]"
+url: "https://nextjs.org"
