@@ -1,6 +1,6 @@
 ---
 technologies: ["nextjs", "remix", "python"]
-sort: 3
+sort: 4
 ---
 
 Other tech I've explored

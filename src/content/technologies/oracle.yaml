@@ -1,4 +1,3 @@
 name: "OracleDB"
-logoLight: "icon-[simple-icons--oracle]"
-logoDark: "dark:icon-[simple-icons--oracle]"
+icon: "icon-[simple-icons--oracle]"
 url: "https://www.oracle.com/database"

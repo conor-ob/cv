@@ -1,4 +1,3 @@
 name: "Protobuf"
-logoLight: "icon-[vscode-icons--file-type-protobuf]"
-logoDark: "dark:icon-[vscode-icons--file-type-protobuf]"
+icon: "icon-[vscode-icons--file-type-protobuf]"
 url: "https://protobuf.dev"

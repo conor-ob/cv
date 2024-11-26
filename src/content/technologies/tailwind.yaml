@@ -1,4 +1,3 @@
 name: "Tailwind"
-logoLight: "icon-[devicon--tailwindcss]"
-logoDark: "dark:icon-[devicon--tailwindcss]"
+icon: "icon-[devicon--tailwindcss]"
 url: "https://tailwindcss.com"

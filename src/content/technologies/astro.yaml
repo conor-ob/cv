@@ -1,4 +1,3 @@
 name: "Astro"
-logoLight: "icon-[devicon--astro]"
-logoDark: "dark:icon-[vscode-icons--file-type-astro]"
+icon: "icon-[devicon--astro] dark:icon-[vscode-icons--file-type-astro]"
 url: "https://astro.build"

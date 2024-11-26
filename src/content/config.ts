@@ -72,8 +72,7 @@ export const collections = {
     type: "data",
     schema: z.object({
       name: z.string().min(1),
-      logoLight: z.string().min(1),
-      logoDark: z.string().min(1),
+      icon: z.string().min(1),
       url: z.string().url(),
     }),
   }),

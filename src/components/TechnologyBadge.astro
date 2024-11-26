@@ -12,9 +12,7 @@ const { technology } = Astro.props;
   <div
     class="flex flex-row items-center gap-1 rounded-md bg-secondary px-1.5 py-0.5 ring-1 ring-border hover:bg-secondary/50 hover:ring-border/50"
   >
-    <span
-      class={`${technology.data.logoLight} ${technology.data.logoDark} size-4`}
-    ></span>
+    <span class={`${technology.data.icon} size-4`}></span>
     <p class="text-xs font-normal text-muted-foreground">
       {technology.data.name}
     </p>

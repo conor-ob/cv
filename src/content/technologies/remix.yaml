@@ -1,4 +1,3 @@
 name: "Remix"
-logoLight: "icon-[lineicons--remix-js]"
-logoDark: "dark:icon-[lineicons--remix-js]"
+icon: "icon-[lineicons--remix-js]"
 url: "https://remix.run"

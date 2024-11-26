@@ -1,4 +1,3 @@
 name: "PostgreSQL"
-logoLight: "icon-[logos--postgresql]"
-logoDark: "dark:icon-[logos--postgresql]"
+icon: "icon-[logos--postgresql]"
 url: "https://www.postgresql.org"
