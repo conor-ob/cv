@@ -4,9 +4,9 @@ company: toast
 displayDate: Dec 2018 - Present
 technologies:
   [
+    "typescript",
     "react",
     "graphql",
-    "typescript",
     "tailwind",
     "kotlin",
     "java",

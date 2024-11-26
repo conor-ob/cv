@@ -1,6 +1,6 @@
 ---
 app: putting-pals
-technologies: ["typescript", "react", "tailwind", "trpc", "docker"]
+technologies: ["typescript", "react", "trpc", "tailwind", "docker"]
 sort: 1
 ---
 
