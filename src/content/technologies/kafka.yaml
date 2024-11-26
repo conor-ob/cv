@@ -1,4 +1,4 @@
 name: "Kafka"
-logoLight: "icon-[skill-icons--kafka]"
-logoDark: "dark:icon-[skill-icons--kafka]"
+logoLight: "icon-[simple-icons--apachekafka]"
+logoDark: "dark:icon-[simple-icons--apachekafka]"
 url: "https://kafka.apache.org"

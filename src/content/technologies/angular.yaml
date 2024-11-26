@@ -1,4 +1,4 @@
 name: "Angular"
-logoLight: "icon-[devicon--angular]"
-logoDark: "dark:icon-[devicon--angular]"
+logoLight: "icon-[vscode-icons--file-type-angular]"
+logoDark: "dark:icon-[vscode-icons--file-type-angular]"
 url: "https://angular.dev"

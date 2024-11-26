@@ -1,0 +1,12 @@
+---
+import { type CollectionEntry } from "astro:content";
+
+type Props = {
+  about: CollectionEntry<"about">;
+};
+
+const { about } = Astro.props;
+const { Content } = await about.render();
+---
+
+<p class="text-sm text-muted-foreground"><Content /></p>

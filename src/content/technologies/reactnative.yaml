@@ -1,4 +1,4 @@
 name: "React Native"
-logoLight: "icon-[devicon--reactnavigation]"
-logoDark: "dark:icon-[devicon--reactnavigation]"
+logoLight: "icon-[tabler--brand-react-native]"
+logoDark: "dark:icon-[tabler--brand-react-native]"
 url: "https://reactnative.dev"

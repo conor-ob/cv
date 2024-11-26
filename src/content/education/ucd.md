@@ -5,4 +5,4 @@ displayDate: 2009 - 2013
 sort: 2
 ---
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis atque quia omnis consectetur, voluptas praesentium veniam blanditiis ratione asperiores accusantium laborum odit commodi quis deserunt incidunt et dolor iure ut! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias quia, doloribus ut beatae perspiciatis voluptatibus.
+Mainly studied lower level hardware design modules but it was here where I discovered my love for software engineering.

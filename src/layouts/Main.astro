@@ -6,6 +6,7 @@ import ExperienceCard from "@components/ExperienceCard.astro";
 import ProjectCard from "@components/ProjectCard.astro";
 import Section from "@components/Section.astro";
 import SkillsSection from "@components/SkillsSection.astro";
+import AboutSection from "@components/AboutSection.astro";
 
 const aboutCollection = await getCollection("about");
 const experienceCollection = await getCollection("experience");
@@ -17,9 +18,14 @@ const skillsCollection = await getCollection("skills");
 <main class="flex flex-grow flex-col gap-16 px-4 pb-32 pt-8 lg:px-0">
   {
     aboutCollection.map((about) => (
-      <Section title={about.data.title}>
-        <p class="text-balance text-sm text-muted-foreground">{about.body}</p>
-      </Section>
+      <div class="w-full">
+        <div class="flex w-full flex-col justify-between gap-4 lg:flex-row">
+          <p class="text-lg font-semibold">{about.data.title}</p>
+          <div class="flex w-full flex-col lg:max-w-2xl">
+            <AboutSection about={about} />
+          </div>
+        </div>
+      </div>
     ))
   }
 
