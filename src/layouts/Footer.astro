@@ -3,7 +3,23 @@ const currentYear = new Date().getFullYear();
 ---
 
 <footer class="border-t border-border px-6 pb-8 pt-6 lg:px-0">
-  <p class="text-center text-sm text-muted-foreground">
-    &copy; {currentYear} Conor O'Brien | Built with Astro 🚀
-  </p>
+  <div
+    class="flex flex-col justify-center gap-4 text-center md:flex-row md:justify-between"
+  >
+    <p class="text-center text-sm text-muted-foreground">
+      &copy; {currentYear} Conor O'Brien | Built with Astro 🚀
+    </p>
+    <div class="flex flex-row justify-center gap-2">
+      <a href="https://www.linkedin.com/in/conor-ob">
+        <span
+          class="icon-[simple-icons--linkedin] size-5 text-muted-foreground hover:text-muted-foreground/80"
+        ></span>
+      </a>
+      <a href="https://github.com/conor-ob">
+        <span
+          class="icon-[fa-brands--github] size-5 text-muted-foreground hover:text-muted-foreground/80"
+        ></span>
+      </a>
+    </div>
+  </div>
 </footer>

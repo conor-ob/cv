@@ -1,12 +1,6 @@
 import { z, defineCollection, reference } from "astro:content";
 
 export const collections = {
-  about: defineCollection({
-    type: "content",
-    schema: z.object({
-      title: z.string().min(1),
-    }),
-  }),
   apps: defineCollection({
     type: "data",
     schema: ({ image }) =>
@@ -43,6 +37,12 @@ export const collections = {
       displayDate: z.string().min(1),
       technologies: z.array(reference("technologies")),
       sort: z.number(),
+    }),
+  }),
+  info: defineCollection({
+    type: "content",
+    schema: z.object({
+      title: z.string().min(1),
     }),
   }),
   projects: defineCollection({
