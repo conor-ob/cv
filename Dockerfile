@@ -2,7 +2,7 @@
 
 # Adjust NODE_VERSION as desired
 ARG NODE_VERSION=20.17.0
-FROM node:${NODE_VERSION}-slim as base
+FROM node:${NODE_VERSION}-slim AS base
 
 # Astro app lives here
 WORKDIR /app
@@ -16,7 +16,7 @@ RUN npm install -g pnpm@$PNPM_VERSION
 
 
 # Throw-away build stage to reduce size of final image
-FROM base as build
+FROM base AS build
 
 # Install packages needed to build node modules
 RUN apt-get update -qq && \
@@ -42,4 +42,4 @@ COPY Caddyfile /etc/caddy/Caddyfile
 
 # Start the server by default, this can be overwritten at runtime
 RUN caddy fmt --overwrite /etc/caddy/Caddyfile
-CMD caddy run --config /etc/caddy/Caddyfile --adapter caddyfile 2>&1
+CMD ["caddy", "run", "--config", "/etc/caddy/Caddyfile", "--adapter", "caddyfile", "2>&1"]
