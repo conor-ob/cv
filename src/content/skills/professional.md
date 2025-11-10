@@ -1,5 +1,5 @@
 ---
-technologies: ["typescript", "react", "graphql", "kotlin", "java", "android"]
+technologies: ["typescript", "react", "kotlin", "java", "graphql", "android"]
 sort: 1
 ---
 

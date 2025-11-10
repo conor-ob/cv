@@ -1,6 +1,5 @@
 ---
-technologies:
-  ["aws", "railway", "cloudflare", "digitalocean", "vercel", "render", "fly"]
+technologies: ["aws", "railway", "cloudflare"]
 sort: 3
 ---
 

@@ -1,0 +1,5 @@
+name: "Stonks"
+logo: "./stonks.png"
+type: "React app"
+deploymentUrl: "https://stonks.conorob.me"
+githubUrl: "https://github.com/conor-ob"
