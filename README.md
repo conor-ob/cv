@@ -63,4 +63,5 @@ Feel free to check [our documentation](https://docs.astro.build) or jump into ou
 ## TODO
 
 - [x] fix error when processing images with sharp image service
+- [x] add dynamic year in footer
 - [ ] add save pdf button
