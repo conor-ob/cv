@@ -11,17 +11,24 @@ export default defineRailway(() => {
       limitOverride: { 
         containers: { 
           cpu: 1,
-          memoryBytes: 1000000000,
-          diskBytes: 100000000000
+          memoryBytes: 1000000000
         }
       },
       healthcheckPath: "/",
       healthcheckTimeout: 300,
       restartPolicyType: "ON_FAILURE",
-      restartPolicyMaxRetries: 5,
-      sleepApplication: false
+      restartPolicyMaxRetries: 3,
+      sleepApplication: false,
+      numReplicas: 1,
+      region: "europe-west4-drams3a",
+      multiRegionConfig: {
+        "europe-west4-drams3a": {
+          numReplicas: 1
+        }
+      },
+      overlapSeconds: 30,
+      drainingSeconds: 10
     },
-    replicas: { "europe-west4-drams3a": 1 },
     domains: ["cv.conorob.me"],
     networking: { privateNetworkEndpoint: "cv" },
     env: { VITE_SITE: preserve() },
