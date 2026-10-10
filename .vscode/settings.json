@@ -1,13 +1,14 @@
 {
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit"
-  },
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "prettier.documentSelectors": ["**/*.astro"],
-  "[astro]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "editor.defaultFormatter": "biomejs.biome",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.biome": "explicit",
+    "source.organizeImports.biome": "explicit"
   },
-  "prettier.ignorePath": ".gitignore",
-  "tailwindCSS.experimental.configFile": "./tailwind.config.mjs"
+  "[astro]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "files.associations": {
+    "*.css": "tailwindcss"
+  }
 }

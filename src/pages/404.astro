@@ -1,0 +1,20 @@
+---
+import "@styles/globals.css";
+
+import Footer from "@layouts/Footer.astro";
+import Header from "@layouts/Header.astro";
+import Html from "@layouts/Html.astro";
+---
+
+<Html>
+  <Header />
+  <main
+    class="flex grow flex-col items-center justify-center gap-4 px-4 pt-8 pb-24 text-center lg:px-0"
+  >
+    <p class="font-semibold text-lg">Page not found</p>
+    <a href="/" class="text-muted-foreground text-sm underline underline-offset-2 hover:text-muted-foreground/80">
+      Back to CV
+    </a>
+  </main>
+  <Footer />
+</Html>

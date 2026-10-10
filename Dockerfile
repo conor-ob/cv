@@ -1,45 +1,31 @@
-# syntax = docker/dockerfile:1
+# syntax=docker/dockerfile:1
 
-# Adjust NODE_VERSION as desired
-ARG NODE_VERSION=20.17.0
-FROM node:${NODE_VERSION}-slim AS base
+ARG NODE_VERSION=24
+ARG CADDY_VERSION=2
 
-# Astro app lives here
+# Build the static site
+FROM node:${NODE_VERSION}-slim AS build
+
 WORKDIR /app
 
-# Set production environment
-ENV NODE_ENV="production"
+# Use the pnpm version pinned in package.json#packageManager
+ENV COREPACK_ENABLE_DOWNLOAD_PROMPT=0
+RUN npm install --global corepack@latest && corepack enable
 
-# Install pnpm
-ARG PNPM_VERSION=9.14.2
-RUN npm install -g pnpm@$PNPM_VERSION
-
-
-# Throw-away build stage to reduce size of final image
-FROM base AS build
-
-# Install packages needed to build node modules
-RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y build-essential node-gyp pkg-config python-is-python3
-
-# Install node modules
-COPY package.json pnpm-lock.yaml ./
+# Install dependencies first so they are cached between source changes
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 RUN pnpm install --frozen-lockfile
 
-# Copy application code
 COPY . .
-
-# Build application
 RUN pnpm run build
 
 
-# Final stage for app image
-FROM caddy:alpine
+# Serve the static output with Caddy
+FROM caddy:${CADDY_VERSION}-alpine
 
-# Copy built application
-COPY --from=build /app/dist /srv
 COPY Caddyfile /etc/caddy/Caddyfile
+RUN caddy validate --config /etc/caddy/Caddyfile --adapter caddyfile
 
-# Start the server by default, this can be overwritten at runtime
-RUN caddy fmt --overwrite /etc/caddy/Caddyfile
-CMD ["caddy", "run", "--config", "/etc/caddy/Caddyfile", "--adapter", "caddyfile", "2>&1"]
+COPY --from=build /app/dist /srv
+
+CMD ["caddy", "run", "--config", "/etc/caddy/Caddyfile", "--adapter", "caddyfile"]

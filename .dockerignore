@@ -22,3 +22,12 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# not needed in the image
+.git/
+.github/
+.railway/
+.vscode/
+Dockerfile
+.dockerignore
+README.md

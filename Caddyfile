@@ -1,37 +1,56 @@
-# global options
+# Global options
 {
-	admin off # theres no need for the admin api in railway's environment
-	persist_config off # storage isn't persistent anyway
-	auto_https off # railway handles https for us, this would cause issues if left enabled
-	# runtime logs
+	# No need for the admin API in Railway's environment
+	admin off
+	# Storage isn't persistent anyway
+	persist_config off
+	# Railway terminates TLS at its edge, so Caddy only serves plain HTTP
+	auto_https off
+
 	log {
-		format json # set runtime log format to json mode 
+		format json
 	}
-	# server options
+
 	servers {
-		trusted_proxies static private_ranges # trust railway's proxy
+		# Trust Railway's proxy so client IPs are logged correctly
+		trusted_proxies static private_ranges
 	}
 }
 
-# site block, listens on the $PORT environment variable, automatically assigned by railway
-:{$PORT} {
-	# access logs
+# Railway assigns $PORT, fall back to 8080 for local `docker run`
+:{$PORT:8080} {
 	log {
-		format json # set access log format to json mode
+		format json
 	}
 
-	# serve from the set folder
 	root * /srv
+	encode zstd gzip
 
-	# enable gzipping responses
-	encode gzip
+	header {
+		-Server
+		Strict-Transport-Security "max-age=31536000; includeSubDomains"
+		X-Content-Type-Options "nosniff"
+		X-Frame-Options "DENY"
+		Referrer-Policy "strict-origin-when-cross-origin"
+		Permissions-Policy "camera=(), microphone=(), geolocation=()"
+	}
 
-	# serve files
+	# Everything under /_astro has a content hash in its filename, cache forever
+	@hashed path /_astro/*
+	header @hashed Cache-Control "public, max-age=31536000, immutable"
+
+	# Everything else (HTML, favicon, robots.txt) is revalidated so new deploys show up immediately
+	@unhashed not path /_astro/*
+	header @unhashed Cache-Control "public, max-age=0, must-revalidate"
+
+	# Resolve clean URLs to Astro's generated HTML files
+	try_files {path} {path}/index.html {path}.html
 	file_server
 
-	# if path doesn't exist, redirect it to 'index.html' for client side routing
-	try_files {path} /index.html
-
-	# all assets contain hash in filename, cache forever
-	header /_astro/* Cache-Control "public, max-age=31536000, s-maxage=31536000, immutable"
+	handle_errors 404 {
+		# Don't let a missing hashed asset get cached as immutable
+		header Cache-Control "public, max-age=0, must-revalidate"
+		rewrite * /404.html
+		file_server
+	}
 }

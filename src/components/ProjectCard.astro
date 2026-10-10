@@ -1,16 +1,16 @@
 ---
 import { Image } from "astro:assets";
-import { type CollectionEntry, getEntry, getEntries } from "astro:content";
-import TechnologyBadge from "./TechnologyBadge.astro";
-import GitHubBadge from "./GitHubBadge.astro";
+import { type CollectionEntry, getEntries, getEntry } from "astro:content";
 import ExternalLinkIcon from "./ExternalLinkIcon.astro";
+import GitHubBadge from "./GitHubBadge.astro";
+import TechnologyBadge from "./TechnologyBadge.astro";
 
 type Props = {
   project: CollectionEntry<"projects">;
 };
 
 const { project } = Astro.props;
-const { data: app } = await getEntry("apps", project.data.app.id);
+const { data: app } = await getEntry(project.data.app);
 const technologies = project.data.technologies
   ? await getEntries(project.data.technologies)
   : [];
@@ -27,7 +27,7 @@ const technologies = project.data.technologies
       <div class="flex flex-col">
         <div class="flex flex-row gap-1.5">
           <p class="font-semibold">{app.name}</p>
-          <div class="mt-[1px]">
+          <div class="mt-px">
             <ExternalLinkIcon url={app.deploymentUrl ?? app.githubUrl} />
           </div>
         </div>

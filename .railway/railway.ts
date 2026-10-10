@@ -5,14 +5,14 @@ export default defineRailway(() => {
     source: github("conor-ob/cv", { checkSuites: false }),
     build: {
       builder: "DOCKERFILE",
-      dockerfilePath: "Dockerfile" 
+      dockerfilePath: "Dockerfile",
     },
-    deploy: { 
-      limitOverride: { 
-        containers: { 
+    deploy: {
+      limitOverride: {
+        containers: {
           cpu: 1,
-          memoryBytes: 1000000000
-        }
+          memoryBytes: 1000000000,
+        },
       },
       healthcheckPath: "/",
       healthcheckTimeout: 300,
@@ -23,11 +23,11 @@ export default defineRailway(() => {
       region: "europe-west4-drams3a",
       multiRegionConfig: {
         "europe-west4-drams3a": {
-          numReplicas: 1
-        }
+          numReplicas: 1,
+        },
       },
       overlapSeconds: 30,
-      drainingSeconds: 10
+      drainingSeconds: 10,
     },
     domains: ["cv.conorob.me"],
     networking: { privateNetworkEndpoint: "cv" },
