@@ -1,19 +1,26 @@
-import { z, defineCollection, reference } from "astro:content";
+import { defineCollection, reference } from "astro:content";
+import { glob } from "astro/loaders";
+import { z } from "astro/zod";
+
+const yaml = (dir: string) =>
+  glob({ pattern: "*.yaml", base: `./src/content/${dir}` });
+const markdown = (dir: string) =>
+  glob({ pattern: "*.md", base: `./src/content/${dir}` });
 
 export const collections = {
   apps: defineCollection({
-    type: "data",
+    loader: yaml("apps"),
     schema: ({ image }) =>
       z.object({
         name: z.string().min(1),
         logo: image(),
         type: z.string().min(1),
-        deploymentUrl: z.string().url().optional(),
-        githubUrl: z.string().min(1).url(),
+        deploymentUrl: z.url().optional(),
+        githubUrl: z.url(),
       }),
   }),
   companies: defineCollection({
-    type: "data",
+    loader: yaml("companies"),
     schema: ({ image }) =>
       z.object({
         name: z.string().min(1),
@@ -21,7 +28,7 @@ export const collections = {
       }),
   }),
   education: defineCollection({
-    type: "content",
+    loader: markdown("education"),
     schema: z.object({
       degree: z.string().min(1),
       school: reference("schools"),
@@ -30,7 +37,7 @@ export const collections = {
     }),
   }),
   experience: defineCollection({
-    type: "content",
+    loader: markdown("experience"),
     schema: z.object({
       title: z.string().min(1),
       company: reference("companies"),
@@ -40,13 +47,13 @@ export const collections = {
     }),
   }),
   info: defineCollection({
-    type: "content",
+    loader: markdown("info"),
     schema: z.object({
       title: z.string().min(1),
     }),
   }),
   projects: defineCollection({
-    type: "content",
+    loader: markdown("projects"),
     schema: z.object({
       app: reference("apps"),
       technologies: z.array(reference("technologies")),
@@ -54,7 +61,7 @@ export const collections = {
     }),
   }),
   schools: defineCollection({
-    type: "data",
+    loader: yaml("schools"),
     schema: ({ image }) =>
       z.object({
         name: z.string().min(1),
@@ -62,18 +69,18 @@ export const collections = {
       }),
   }),
   skills: defineCollection({
-    type: "content",
+    loader: markdown("skills"),
     schema: z.object({
       technologies: z.array(reference("technologies")),
       sort: z.number(),
     }),
   }),
   technologies: defineCollection({
-    type: "data",
+    loader: yaml("technologies"),
     schema: z.object({
       name: z.string().min(1),
       icon: z.string().min(1),
-      url: z.string().url(),
+      url: z.url(),
     }),
   }),
 };

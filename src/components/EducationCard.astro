@@ -7,7 +7,7 @@ type Props = {
 };
 
 const { education } = Astro.props;
-const { data: school } = await getEntry("schools", education.data.school.id);
+const { data: school } = await getEntry(education.data.school);
 ---
 
 <div class="rounded-2xl border border-border bg-primary-foreground p-4">

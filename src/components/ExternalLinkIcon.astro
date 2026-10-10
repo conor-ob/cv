@@ -6,8 +6,10 @@ interface Props {
 const { url } = Astro.props;
 ---
 
-<a href={url} aria-label={url}>
+<a href={url}>
+  <span class="sr-only">{url}</span>
   <span
+    aria-hidden="true"
     class="icon-[material-symbols--link] size-6 text-blue-500 hover:text-blue-700"
   ></span>
 </a>

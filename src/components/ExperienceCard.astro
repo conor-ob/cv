@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import { type CollectionEntry, getEntry, getEntries } from "astro:content";
+import { type CollectionEntry, getEntries, getEntry } from "astro:content";
 import TechnologyBadge from "./TechnologyBadge.astro";
 
 type Props = {
@@ -8,10 +8,7 @@ type Props = {
 };
 
 const { experience } = Astro.props;
-const { data: company } = await getEntry(
-  "companies",
-  experience.data.company.id,
-);
+const { data: company } = await getEntry(experience.data.company);
 const technologies = experience.data.technologies
   ? await getEntries(experience.data.technologies)
   : [];

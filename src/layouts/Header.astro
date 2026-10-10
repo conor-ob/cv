@@ -1,6 +1,6 @@
 ---
-import ThemeToggle from "@scripts/ThemeToggle.astro";
 import { Image } from "astro:assets";
+import ThemeToggle from "@scripts/ThemeToggle.astro";
 
 import avatar from "./avatar.jpg";
 ---
@@ -15,11 +15,13 @@ import avatar from "./avatar.jpg";
     <p class="text-base font-semibold">Conor O'Brien</p>
   </div>
   <button
+    type="button"
     id="toggleDarkMode"
     class="relative touch-manipulation rounded-md border border-border p-1.5 transition-all hover:bg-border"
   >
     <span class="sr-only">Dark Theme</span>
     <svg
+      aria-hidden="true"
       xmlns="http://www.w3.org/2000/svg"
       width="32"
       height="32"
@@ -31,6 +33,7 @@ import avatar from "./avatar.jpg";
       ></path></svg
     >
     <svg
+      aria-hidden="true"
       xmlns="http://www.w3.org/2000/svg"
       width="32"
       height="32"

@@ -1,5 +1,5 @@
 ---
-
+import ThemeProvider from "@scripts/ThemeProvider.astro";
 ---
 
 <!doctype html>
@@ -14,6 +14,8 @@
     <title>CV • Conor O'Brien</title>
     <link rel="preconnect" href="https://rsms.me/" />
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+    <ThemeProvider />
   </head>
   <body
     class="mx-auto flex min-h-dvh max-w-4xl flex-col font-sans tracking-tight"

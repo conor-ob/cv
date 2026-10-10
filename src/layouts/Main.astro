@@ -1,23 +1,24 @@
 ---
-import { getCollection } from "astro:content";
-
+import { getCollection, getEntry } from "astro:content";
+import AboutSection from "@components/AboutSection.astro";
+import ContactSection from "@components/ContactSection.astro";
 import EducationCard from "@components/EducationCard.astro";
 import ExperienceCard from "@components/ExperienceCard.astro";
 import ProjectCard from "@components/ProjectCard.astro";
 import Section from "@components/Section.astro";
 import SkillsSection from "@components/SkillsSection.astro";
-import AboutSection from "@components/AboutSection.astro";
-import { getEntry } from "astro:content";
-import ContactSection from "@components/ContactSection.astro";
 
 const aboutSection = await getEntry("info", "about");
+if (aboutSection === undefined) {
+  throw new Error("Missing info/about.md content entry");
+}
 const experienceCollection = await getCollection("experience");
 const educationCollection = await getCollection("education");
 const projectsCollection = await getCollection("projects");
 const skillsCollection = await getCollection("skills");
 ---
 
-<main class="flex flex-grow flex-col gap-16 px-4 pb-24 pt-8 lg:px-0">
+<main class="flex grow flex-col gap-16 px-4 pb-24 pt-8 lg:px-0">
   <div class="w-full">
     <div class="flex w-full flex-col justify-between gap-4 lg:flex-row">
       <p class="text-lg font-semibold">Contact</p>
