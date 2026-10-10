@@ -5,16 +5,17 @@
   "private": true,
   "packageManager": "pnpm@12.10.1",
   "engines": {
-    "node": ">=22.12.0"
+    "node": ">=24"
   },
   "scripts": {
     "dev": "astro dev --host",
     "start": "astro dev",
-    "build": "astro check && astro build",
+    "build": "astro build",
     "preview": "astro preview",
-    "check": "biome check . && astro check",
     "lint": "biome check .",
     "format": "biome check --write .",
+    "typecheck": "astro check && tsc --noEmit",
+    "check": "pnpm lint && pnpm typecheck",
     "astro": "astro"
   },
   "dependencies": {

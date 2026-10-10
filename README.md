@@ -4,16 +4,18 @@ Source for [cv.conorob.me](https://cv.conorob.me), a static CV site built with [
 
 ## Development
 
-Requires Node 22.12+ (see `.nvmrc`) and pnpm (version pinned via `packageManager`, run `corepack enable` once).
+Requires Node 24+ (see `.nvmrc`) and pnpm (version pinned via `packageManager`, run `corepack enable` once).
 
-| Command          | Action                                             |
-| :--------------- | :------------------------------------------------- |
-| `pnpm install`   | Install dependencies                               |
-| `pnpm dev`       | Start the dev server at `localhost:4321`           |
-| `pnpm build`     | Type-check and build the site to `./dist/`         |
-| `pnpm preview`   | Preview the production build locally               |
-| `pnpm check`     | Lint/format check with Biome and type-check        |
-| `pnpm format`    | Apply Biome formatting and safe lint fixes         |
+| Command          | Action                                        |
+| :--------------- | :-------------------------------------------- |
+| `pnpm install`   | Install dependencies                          |
+| `pnpm dev`       | Start the dev server at `localhost:4321`      |
+| `pnpm build`     | Build the site to `./dist/`                   |
+| `pnpm preview`   | Preview the production build locally          |
+| `pnpm lint`      | Lint and format check with Biome              |
+| `pnpm format`    | Apply Biome formatting and safe lint fixes    |
+| `pnpm typecheck` | Type-check with `astro check` and `tsc`       |
+| `pnpm check`     | Run `lint` and `typecheck` (same as CI)       |
 
 ## Content
 
