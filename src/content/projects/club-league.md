@@ -1,5 +1,5 @@
 ---
-app: inter-club-league
+app: club-league
 technologies: ["typescript", "react", "graphql", "tailwind"]
 sort: 2
 ---

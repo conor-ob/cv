@@ -1,0 +1,5 @@
+name: "Club League"
+logo: "./club-league.png"
+type: "React app"
+deploymentUrl: "https://clubleague.conorob.me"
+githubUrl: "https://github.com/conor-ob/club-league"
