@@ -19,17 +19,17 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@iconify/json": "^2.2.541",
+    "@iconify/json": "^2.2.550",
     "@iconify/tailwind4": "^1.2.3",
     "@tailwindcss/vite": "^4.3.3",
-    "astro": "^7.3.8",
+    "astro": "^7.4.4",
     "sharp": "^0.35.5",
     "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.10",
-    "@biomejs/biome": "^2.5.15",
-    "railway": "^3.13.1",
+    "@astrojs/check": "^0.9.12",
+    "@biomejs/biome": "^2.6.4",
+    "railway": "^3.16.0",
     "typescript": "^6.0.3"
   }
 }

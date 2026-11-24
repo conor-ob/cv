@@ -18,7 +18,7 @@
     "rules": {
       "preset": "recommended",
       "nursery": {
-        "useSortedClasses": {
+        "useTailwindSortedClasses": {
           "level": "warn",
           "fix": "safe"
         }
@@ -33,6 +33,11 @@
   "css": {
     "parser": {
       "tailwindDirectives": true
+    }
+  },
+  "markdown": {
+    "formatter": {
+      "enabled": false
     }
   },
   "html": {
