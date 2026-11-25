@@ -22,7 +22,7 @@
     "@iconify/json": "^2.2.550",
     "@iconify/tailwind4": "^1.2.3",
     "@tailwindcss/vite": "^4.3.3",
-    "astro": "^7.4.4",
+    "astro": "^7.4.7",
     "sharp": "^0.35.5",
     "tailwindcss": "^4.3.3"
   },
