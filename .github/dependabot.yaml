@@ -1,20 +1,96 @@
+# Dependabot baseline. Source of truth: conor-ob/hq templates/dependabot/dependabot.yaml
+# Policy and reasons: conor-ob/hq docs/dependabot.md
+#
+# Copy to .github/dependabot.yaml.
+# Keep the baseline entries as they are. Repo-specific changes go under
+# "Repo exceptions" comments, so a diff against the template shows only them.
 version: 2
+
 updates:
+  # One entry per pnpm workspace, at the workspace root. It covers every
+  # package in the workspace and the catalogs in pnpm-workspace.yaml.
   - package-ecosystem: npm
     directory: /
     schedule:
-      interval: monthly
+      interval: weekly
+      day: monday
+      time: "06:00"
+      timezone: Europe/Dublin
+    cooldown:
+      default-days: 7
+      semver-major-days: 30
     groups:
-      dependencies:
-        patterns: ["*"]
-        update-types: [minor, patch]
-
-  - package-ecosystem: docker
-    directory: /
-    schedule:
-      interval: monthly
+      # Majors stay out of the group, so each one gets its own PR.
+      minor-and-patch:
+        update-types:
+          - minor
+          - patch
+    commit-message:
+      # Without prefix-development, dev dependencies use this prefix too.
+      prefix: chore
+      include: scope
+    # Repo exceptions: deliberate ignores, for example:
+    # ignore:
+    #   - dependency-name: "@types/node"
+    #     update-types: ["version-update:semver-major"]
 
   - package-ecosystem: github-actions
     directory: /
     schedule:
-      interval: monthly
+      interval: weekly
+      day: monday
+      time: "06:00"
+      timezone: Europe/Dublin
+    cooldown:
+      default-days: 7
+    groups:
+      # Majors stay out of the group, so each one gets its own PR.
+      github-actions:
+        update-types:
+          - minor
+          - patch
+    commit-message:
+      prefix: ci
+      include: scope
+
+  - package-ecosystem: docker
+    directories:
+      - /
+    schedule:
+      interval: weekly
+      day: monday
+      time: "06:00"
+      timezone: Europe/Dublin
+    cooldown:
+      default-days: 7
+    groups:
+      docker:
+        patterns:
+          - "*"
+    commit-message:
+      prefix: build
+      include: scope
+    # Repo exceptions: Node majors are held back. The node image tracks the
+    # runtime pinned in .nvmrc and package.json#engines, so it moves with them.
+    ignore:
+      - dependency-name: node
+        update-types: ["version-update:semver-major"]
+
+  # Add when the repo has compose files. List every directory that has one.
+  # - package-ecosystem: docker-compose
+  #   directories:
+  #     - /
+  #   schedule:
+  #     interval: weekly
+  #     day: monday
+  #     time: "06:00"
+  #     timezone: Europe/Dublin
+  #   cooldown:
+  #     default-days: 7
+  #   groups:
+  #     docker-compose:
+  #       patterns:
+  #         - "*"
+  #   commit-message:
+  #     prefix: build
+  #     include: scope
