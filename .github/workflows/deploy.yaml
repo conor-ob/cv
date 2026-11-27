@@ -1,0 +1,76 @@
+# hq baseline for Railway config as code. Source of truth: conor-ob/hq
+# templates/railway/deploy.yaml, using the "no install" variant for the plan
+# job. See hq's docs/railway-deploy.md for the policy and the reason behind
+# each line
+name: 🚂 Deploy
+
+# Plan runs on PRs and pins the plan as an artifact. Apply runs on merge and
+# applies exactly that plan, so there's no manual trigger: the action finds the
+# plan through the merged PR, and fails if the environment or .railway/ moved
+# since
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+    paths:
+      - ".railway/**"
+  push:
+    branches:
+      - main
+    paths:
+      - ".railway/**"
+
+permissions:
+  contents: read
+
+# Cancel superseded PR plans only: an apply must never be cut off mid-run
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  plan:
+    name: 📋 Plan
+    # Fork PRs get no secrets
+    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+      # Lets railwayapp/config post the plan comment as the Railway bot
+      id-token: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      # No install steps: npm installs what railway.ts needs, and
+      # railwayapp/config runs `npm install` at the repo root itself
+
+      # Uploads the plan as an artifact; the apply job applies exactly this
+      # plan on merge
+      - name: Railway config plan
+        uses: railwayapp/config@9e17d413dbe219f19d62538d9c06b5dbb5e9abf8 # v1.2.0
+        with:
+          command: plan
+          railway-token: ${{ secrets.RAILWAY_TOKEN }}
+
+  apply:
+    name: 🚀 Apply
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      # Download the plan artifact and find the commit's merged PR
+      actions: read
+      pull-requests: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Railway config apply
+        uses: railwayapp/config@9e17d413dbe219f19d62538d9c06b5dbb5e9abf8 # v1.2.0
+        with:
+          command: apply
+          railway-token: ${{ secrets.RAILWAY_TOKEN }}
