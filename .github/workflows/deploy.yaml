@@ -1,7 +1,3 @@
-# hq baseline for Railway config as code. Source of truth: conor-ob/hq
-# templates/railway/deploy.yaml, using the "no install" variant for the plan
-# job. See hq's docs/railway-deploy.md for the policy and the reason behind
-# each line
 name: 🚂 Deploy
 
 # Plan runs on PRs and pins the plan as an artifact. Apply runs on merge and
