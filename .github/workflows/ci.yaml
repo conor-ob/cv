@@ -60,6 +60,10 @@ jobs:
         if: ${{ !cancelled() && steps.install.outcome == 'success' }}
         run: pnpm run build
 
+      - name: Test
+        if: ${{ !cancelled() && steps.install.outcome == 'success' }}
+        run: pnpm run test
+
   # The deploy builds this Dockerfile, so build it here first. Otherwise an
   # auto-merged base image update could break the build and only show up as
   # a failed deploy on main. Built, never pushed, with no cache
