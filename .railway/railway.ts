@@ -23,5 +23,3 @@ export default defineRailway(() => {
     resources: [cv],
   });
 });
-
-// temporary: runs the plan job on this PR, reverted before merge
