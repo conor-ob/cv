@@ -1,10 +1,7 @@
-# syntax=docker/dockerfile:1
-
-ARG NODE_VERSION=24
-ARG CADDY_VERSION=2
+# syntax=docker/dockerfile:1@sha256:572cebbc2b15e6f84c077742952674889cb63cd5e9b80abdffcbe587b6f19183
 
 # Build the static site
-FROM node:${NODE_VERSION}-slim AS build
+FROM node:24.22.2-slim@sha256:01d566e8d94d8c619591d78652babfccd3c6992a3dffa9ed5ab39e11cf6c70e9 AS build
 
 WORKDIR /app
 
@@ -21,7 +18,7 @@ RUN pnpm run build
 
 
 # Serve the static output with Caddy
-FROM caddy:${CADDY_VERSION}-alpine
+FROM caddy:2.11.9-alpine@sha256:003a97808e781aa9f7e75cc2f43d34d461099031faf5e20faefb9f61126836f0
 
 COPY Caddyfile /etc/caddy/Caddyfile
 RUN caddy validate --config /etc/caddy/Caddyfile --adapter caddyfile
