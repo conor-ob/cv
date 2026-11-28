@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
-  "packageManager": "pnpm@12.10.1",
+  "packageManager": "pnpm@12.22.0",
   "engines": {
     "node": ">=24"
   },
@@ -20,7 +20,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@iconify/json": "^2.2.558",
+    "@iconify/json": "^2.2.559",
     "@iconify/tailwind4": "^1.2.3",
     "@tailwindcss/vite": "^4.3.5",
     "astro": "^7.4.13",
